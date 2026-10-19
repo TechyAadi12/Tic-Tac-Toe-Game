@@ -203,7 +203,9 @@ function App() {
         <section className="game-card" aria-label="Tic tac toe game">
           <div className="game-card-top">
             <div>
-              <span className="round-label">ROUND IN PROGRESS</span>
+              <span className="round-label">
+                {roundOver ? "ROUND COMPLETE" : board.some(Boolean) ? "ROUND IN PROGRESS" : "READY WHEN YOU ARE"}
+              </span>
               <h2>{mode === "computer" ? "You vs. CPU" : "Your next classic"}</h2>
             </div>
             <div className="round-number"><span className="round-dot" /> LIVE</div>
